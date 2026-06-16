@@ -3,360 +3,661 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Telekung Maryam — Belanja Telekung Berkualiti</title>
-  <meta name="description" content="Telekung Maryam selesa digunakan, material berkualiti, dan kemas untuk ibadah." />
+  <title>Telekung Maryam — Koleksi Premium Berkualiti</title>
+  <meta name="description" content="Telekung selesa digunakan, material berkualiti, dan kemas untuk ibadah. Koleksi Maryam Dhuha, Zaraa, Basic Sofea & NurMaryam." />
+  
   <style>
     :root {
-      --bg-beige: #fbf8ef; /* --beige-100 */
-      --text-dark: #141414;
-      --card-bg: #f5f1df; /* --beige-200 */
-      --muted: #7e7e7e;   /* --grey-500 */
-      --brand-blue: #2d59e6; /* --primary-blue */
-      --brand-yellow: #fed600; /* --primary-yellow */
-      --yellow-light: #fffcc4; /* --yellow-100 */
-      --line: rgba(0, 0, 0, 0.08);
-      --shadow: 0 12px 30px rgba(73, 63, 21, 0.15);
-      --radius: 18px;
+      --bg: #faf8f3;
+      --surface: #ffffff;
+      --card: #f4f1e8;
+      --border: rgba(0,0,0,0.08);
+      --border-strong: rgba(0,0,0,0.14);
+      --text: #111;
+      --muted: #888;
+      --soft: #bbb;
+      --blue: #2350d8;
+      --blue-light: #eef2fd;
+      --blue-hover: #1a3db5;
+      --yellow: #f5c800;
+      --yellow-bg: #fffce0;
+      --green: #16a34a;
+      --green-bg: #f0fdf4;
+      --radius-sm: 10px;
+      --radius: 14px;
+      --radius-lg: 20px;
     }
 
-    * { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-beige);
-      color: var(--text-dark);
-      font-family: "Plasto", ui-sans-serif, system-ui, -apple-system, sans-serif;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    ::selection { background-color: #fce317; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); -webkit-tap-highlight-color: transparent; }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-    
+    ::selection { background: #f5e500; }
+
+    /* NAV */
     header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(251, 248, 239, 0.85);
-      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
-    
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; }
-    
-    .logo {
-      width: 40px; height: 40px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--brand-blue), #4076f1);
+    nav { max-width: 1080px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -.2px; }
+    .brand-icon { width: 34px; height: 34px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .brand-icon svg { display: block; }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a { padding: 6px 12px; border-radius: 8px; font-size: 14px; color: var(--muted); font-weight: 500; transition: all .15s; }
+    .nav-links a:hover { color: var(--text); background: var(--card); }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    /* LAYOUT */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* HERO */
+    .hero { padding: 36px 0 28px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow-bg); border: 1px solid var(--yellow);
+      color: #6b4f00; font-size: 13px; font-weight: 600;
+      padding: 7px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+    h1 { font-size: 40px; font-weight: 800; line-height: 1.1; letter-spacing: -.8px; color: #000; }
+    @media (max-width: 500px) { h1 { font-size: 28px; } }
+
+    .hero-desc { margin-top: 14px; font-size: 15px; line-height: 1.65; color: var(--muted); max-width: 52ch; }
+
+    .trust-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 600; }
+    .trust-icon { font-size: 16px; }
+
+    /* CHECKOUT CARD */
+    .checkout-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    /* PRODUCT TABS */
+    .prod-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+    .prod-tabs::-webkit-scrollbar { display: none; }
+    .prod-tab {
+      flex-shrink: 0; padding: 13px 16px;
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      border-bottom: 2px solid transparent; cursor: pointer;
+      transition: all .15s; white-space: nowrap;
+      background: none; border-top: none; border-left: none; border-right: none;
+    }
+    .prod-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .prod-tab:hover:not(.active) { color: var(--text); }
+
+    /* PRODUCT PANEL */
+    .prod-panel { display: none; }
+    .prod-panel.active { display: block; }
+
+    .prod-header { padding: 18px 20px 16px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--yellow-bg) 0%, transparent 100%); }
+    .price-row { display: flex; align-items: baseline; gap: 10px; }
+    .price { font-size: 26px; font-weight: 900; letter-spacing: -.5px; }
+    .price-old { font-size: 14px; color: var(--muted); text-decoration: line-through; font-weight: 500; }
+    .prod-name-tag { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+
+    /* IMAGE BOX */
+    .img-zone { padding: 16px 20px 0; }
+    .img-box {
+      width: 100%; aspect-ratio: 1/1; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--card);
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 8px 20px rgba(45, 89, 230, 0.2);
+      overflow: hidden; position: relative;
     }
-    .logo svg { display: block; }
-    
-    .nav .links { display: flex; gap: 16px; color: var(--muted); font-weight: 600; }
-    .nav .links a { padding: 8px 10px; border-radius: 12px; border: 1px solid transparent; transition: all 0.2s; }
-    .nav .links a:hover { border-color: var(--line); color: var(--text-dark); }
-
-    .hero { padding: 34px 0 10px; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: start; }
-    
-    @media (max-width: 900px) { 
-      .hero-grid { grid-template-columns: 1fr; } 
-      .nav .links { display: none; } 
-    }
-
-    .badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 14px; border-radius: 999px;
-      background: var(--yellow-light);
-      border: 1px solid var(--brand-yellow);
-      color: #705500; font-weight: 700; margin-bottom: 14px; font-size: 14px;
-    }
-    .badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--brand-blue); }
-
-    h1 { margin: 0; font-size: 42px; line-height: 1.1; letter-spacing: -.8px; color: #000; }
-    @media (max-width: 520px) { h1 { font-size: 32px; } }
-    
-    .sub { color: var(--muted); font-size: 16px; line-height: 1.6; margin-top: 14px; max-width: 56ch; }
-
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 24px; }
-    
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 14px 22px; border-radius: 14px; border: 1px solid var(--line);
-      background: #fff; color: var(--text-dark); font-weight: 800; cursor: pointer;
-      transition: transform .12s ease, background .12s ease;
-    }
-    .btn:hover { transform: translateY(-1px); background: #f8f8f8; }
-    
-    .btn-primary {
-      background: var(--brand-blue); color: #fff; border-color: var(--brand-blue);
-      box-shadow: 0 10px 25px rgba(45, 89, 230, 0.25);
-    }
-    .btn-primary:hover { background: #2243d3; color: #fff; }
-
-    .stats { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
-    .stat { flex: 1 1 160px; background: #fff; border: 1px solid var(--line); padding: 16px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
-    .stat .k { font-weight: 800; font-size: 16px; color: var(--brand-blue); }
-    .stat .v { color: var(--muted); font-size: 13px; margin-top: 4px; line-height: 1.4; }
-
-    .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-
-    .product { height: 100%; display: flex; flex-direction: column; }
-    .product-top { padding: 20px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, var(--yellow-light), transparent); }
-    .product-top .row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-    
-    .price { font-weight: 900; font-size: 28px; letter-spacing: -.4px; margin-top: 6px; color: var(--text-dark); }
-    .old { color: var(--muted); text-decoration: line-through; font-weight: 600; font-size: 14px; }
-
-    .gallery { padding: 20px; }
-    .img-box { width: 100%; aspect-ratio: 1/1; border-radius: 16px; border: 1px solid var(--line); background-color: var(--card-bg); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
     .img-box img { width: 100%; height: 100%; object-fit: cover; display: none; }
-    .img-placeholder-text { position: absolute; text-align: center; padding: 20px; color: var(--muted); font-size: 14px; }
+    .img-placeholder { 
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      text-align: center; color: var(--soft); font-size: 13px; width: 100%; padding: 20px;
+    }
+    .img-placeholder strong { display: block; font-size: 28px; margin-bottom: 6px; }
 
-    .form { padding: 20px; margin-top: auto; }
-    .form h3 { margin: 0 0 14px; font-size: 18px; color: var(--text-dark); }
-    .field { display: grid; gap: 8px; margin-bottom: 16px; }
-    
-    label { color: var(--text-dark); font-size: 14px; font-weight: 700; }
-    select, input[type="text"], input[type="number"] { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--muted); background: #fff; color: var(--text-dark); font-size: 15px; outline: none; }
-    select:focus, input:focus { border-color: var(--brand-blue); }
+    /* FORM */
+    .form-body { padding: 18px 20px 20px; }
 
-    .summary { display: grid; grid-template-columns: 1fr auto; gap: 10px 12px; align-items: center; padding: 14px 0; border-top: 1px dashed var(--muted); border-bottom: 1px dashed var(--muted); margin: 16px 0; }
-    .summary .muted { color: var(--muted); font-weight: 700; font-size: 14px; }
-    .summary .val { font-weight: 900; text-align: right; font-size: 20px; color: var(--brand-blue); }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .field select, .field input[type="number"], .field input[type="text"] {
+      width: 100%; padding: 10px 12px;
+      border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+      background: var(--bg); color: var(--text); font-size: 14px;
+      appearance: none; -webkit-appearance: none; outline: none; transition: border .15s;
+    }
+    .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+    .field select:focus, .field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(35,80,216,.1); }
 
-    /* Gaya Struktur Pembayaran BCL */
-    .bcl-view { display: none; padding: 24px; min-height: 450px; }
-    .bcl-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
-    .bcl-header button { background: none; border: none; color: var(--brand-blue); font-weight: 700; cursor: pointer; font-size: 14px; }
-    .order-summary-badge { background: var(--card-bg); padding: 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; margin-bottom: 18px; border: 1px solid var(--line); }
+    /* COLOR SWATCHES */
+    .color-label { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .swatches { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .swatch {
+      width: 30px; height: 30px; border-radius: 50%; border: 2px solid transparent;
+      cursor: pointer; transition: all .15s; position: relative;
+    }
+    .swatch.active { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(35,80,216,.2); }
+    .swatch:hover { transform: scale(1.1); }
+    .swatch-name { font-size: 12px; color: var(--muted); margin-top: -10px; margin-bottom: 10px; font-weight: 500; }
 
+    /* SIZES */
+    .size-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .size-btn {
+      padding: 8px 14px; border-radius: 9px; border: 1px solid var(--border-strong);
+      font-size: 13px; font-weight: 600; cursor: pointer; background: var(--bg);
+      color: var(--text); transition: all .15s;
+    }
+    .size-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .size-btn:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+
+    /* TOTAL + BUY */
+    .divider-dash { border: none; border-top: 1px dashed var(--border-strong); margin: 14px 0; }
+    .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .total-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .total-val { font-size: 22px; font-weight: 900; color: var(--blue); letter-spacing: -.3px; }
+
+    .btn-buy {
+      width: 100%; padding: 14px; border: none; border-radius: var(--radius-sm);
+      background: var(--blue); color: #fff; font-size: 15px; font-weight: 800;
+      cursor: pointer; transition: all .15s; letter-spacing: -.1px;
+    }
+    .btn-buy:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .btn-buy:active { transform: translateY(0); }
+
+    /* BCL PAYMENT VIEW */
+    .bcl-view { display: none; padding: 20px; }
+    .bcl-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .bcl-title { font-size: 15px; font-weight: 800; }
+    .btn-back { background: none; border: 1px solid var(--border-strong); color: var(--blue); font-weight: 600; font-size: 13px; cursor: pointer; padding: 7px 12px; border-radius: 8px; transition: all .15s; }
+    .btn-back:hover { background: var(--blue-light); }
+    .bcl-summary { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.8; margin-bottom: 18px; }
+    .bcl-summary strong { font-weight: 700; }
+    .bcl-total { color: var(--blue); font-weight: 800; font-size: 15px; }
+
+    /* SECTIONS */
     section { padding: 40px 0; }
-    .section-title { font-size: 24px; margin: 0 0 18px; text-align: center; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+    .section-head { text-align: center; margin-bottom: 24px; }
+    .section-head h2 { font-size: 22px; font-weight: 800; letter-spacing: -.3px; }
+    .section-head p { color: var(--muted); font-size: 14px; margin-top: 6px; }
 
-    .feature { padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: #fff; }
-    .feature h4 { margin: 0 0 8px; font-size: 16px; color: var(--brand-blue); }
-    .feature p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+    .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: var(--blue-light); color: var(--blue); font-size: 13px; font-weight: 800; border-radius: 8px; margin-bottom: 12px; }
+    .step-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .step-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-    footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); background: #fff; }
-    .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    /* FAQ */
+    .faq-list { max-width: 640px; margin: 0 auto; display: grid; gap: 10px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { padding: 16px 18px; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q span:last-child { font-size: 18px; color: var(--muted); flex-shrink: 0; transition: transform .2s; }
+    .faq-item.open .faq-q span:last-child { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 18px 16px; font-size: 14px; color: var(--muted); line-height: 1.65; border-top: 1px solid var(--border); padding-top: 14px; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* FOOTER */
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 22px 0; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--muted); }
+    .footer-inner strong { color: var(--text); }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="logo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 10V7.5C7 6.12 8.12 5 9.5 5H14.5C15.88 5 17 6.12 17 7.5V10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M6 10H18V19C18 20.1 17.1 21 16 21H8C6.9 21 6 20.1 6 19V10Z" stroke="white" stroke-width="2"/>
-          </svg>
-        </div>
-        <span>Telekung Maryam</span>
+<header>
+  <nav>
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M7 10V7.5C7 6.12 8.12 5 9.5 5H14.5C15.88 5 17 6.12 17 7.5V10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 10H18V19C18 20.1 17.1 21 16 21H8C6.9 21 6 20.1 6 19V10Z" stroke="white" stroke-width="2"/>
+        </svg>
       </div>
-      <div class="links">
-        <a href="#produk">Produk</a>
-        <a href="#cara-beli">Cara Beli</a>
-        <a href="#faq">FAQ</a>
-      </div>
+      <span>Telekung Maryam</span>
     </div>
-  </header>
+    <div class="nav-links">
+      <a href="#produk">Produk</a>
+      <a href="#cara-beli">Cara Beli</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+</header>
 
-  <main class="container">
+<main>
+  <div class="wrap">
+
+    <!-- HERO -->
     <section class="hero" id="produk">
       <div class="hero-grid">
-        
+
         <div>
-          <div class="badge"><span class="dot"></span> Selesa untuk solat • Kemas • Berkualiti Tinggi</div>
-          <h1>Telekung Maryam membuatkan ibadah anda lebih khusyuk</h1>
-          <p class="sub">Pilih rekaan kegemaran anda, tetapkan kuantiti, dan klik "Beli Sekarang" untuk membuat pembayaran selamat menerusi sistem BCL.</p>
-          
-          <div class="stats">
-            <div class="stat">
-              <div class="k">Material Selesa</div>
-              <div class="v">Lembut pada kulit, sejuk, and jatuh terletak cantik di badan.</div>
-            </div>
-            <div class="stat">
-              <div class="k">Proses Pantas</div>
-              <div class="v">Pesanan anda diproses segera selepas bayaran disahkan BCL.</div>
-            </div>
+          <div class="pill"><span class="pill-dot"></span> 4 Koleksi Tersedia • Pelbagai Saiz & Warna</div>
+          <h1>Telekung yang buat solat anda lebih tenang</h1>
+          <p class="hero-desc">Material lembut, potongan kemas, dan warna pilihan — untuk ibadah seharian atau majlis istimewa. Proses pesanan pantas selepas bayaran BCL disahkan.</p>
+
+          <div class="trust-row">
+            <div class="trust-item"><span class="trust-icon">🧵</span> Material Lembut & Sejuk</div>
+            <div class="trust-item"><span class="trust-icon">📦</span> Penghantaran Pantas</div>
+            <div class="trust-item"><span class="trust-icon">🔒</span> Bayaran Selamat BCL</div>
           </div>
         </div>
 
-        <aside class="card product" id="checkout">
-          
+        <!-- CHECKOUT CARD -->
+        <aside class="checkout-card" id="checkout">
+
+          <!-- PRODUCT SELECTION VIEW -->
           <div id="productSelectionView">
-            <div class="product-top">
-              <div class="row">
-                <div>
-                  <div style="color:var(--muted); font-weight:800; font-size:14px;">Koleksi Premium</div>
-                  <div class="price" id="hargaTampil">RM 129.00</div>
-                  <div class="old" id="hargaLama">RM 159.00</div>
+
+            <!-- PRODUCT TABS -->
+            <div class="prod-tabs">
+              <button class="prod-tab active" data-panel="maryam">Maryam Dhuha</button>
+              <button class="prod-tab" data-panel="nurmaryam">NurMaryam</button>
+              <button class="prod-tab" data-panel="zaraa">Zaraa</button>
+              <button class="prod-tab" data-panel="sofea">Basic Sofea</button>
+            </div>
+
+            <!-- MARYAM DHUHA -->
+            <div class="prod-panel active" id="panel-maryam" data-type="sized">
+              <div class="prod-header">
+                <div class="prod-name-tag">Maryam Dhuha — Pelbagai Saiz</div>
+                <div class="price-row">
+                  <div class="price" id="price-maryam">RM 39.00</div>
+                  <div class="price-old">RM 69.00</div>
                 </div>
               </div>
-            </div>
-
-            <div class="gallery">
-              <div class="img-box">
-                <img id="gambarProduk" src="" alt="Telekung Maryam">
-                <div class="img-placeholder-text" id="placeholderText">
-                  <strong>[ Gambar Rekaan ]</strong><br/>Masukkan pautan gambar di dalam atribut src.
+              <div class="img-zone">
+                <div class="img-box">
+                  <img src="" alt="Maryam Dhuha" id="img-maryam">
+                  <div class="img-placeholder"><strong>🧕</strong>Maryam Dhuha<br>Masukkan pautan gambar</div>
                 </div>
               </div>
+              <div class="form-body">
+                <div class="color-label">Pilih Warna <span id="swatch-name-maryam" class="swatch-name"></span></div>
+                <div class="swatches" id="swatches-maryam">
+                  <div class="swatch active" data-name="White Snow" style="background:#f9f9f9; border-color:#ccc;" title="White Snow"></div>
+                  <div class="swatch" data-name="White Nila" style="background:#e8eaf6;" title="White Nila"></div>
+                  <div class="swatch" data-name="Black" style="background:#1a1a1a;" title="Black"></div>
+                  <div class="swatch" data-name="Nude" style="background:#e8c9a0;" title="Nude"></div>
+                  <div class="swatch" data-name="Light Pink" style="background:#f9c6d0;" title="Light Pink"></div>
+                  <div class="swatch" data-name="Maroon" style="background:#7b1c2e;" title="Maroon"></div>
+                  <div class="swatch" data-name="Grey" style="background:#9e9e9e;" title="Grey"></div>
+                  <div class="swatch" data-name="Purple" style="background:#9c6cc0;" title="Purple"></div>
+                  <div class="swatch" data-name="Soft Peach" style="background:#ffcba4;" title="Soft Peach"></div>
+                  <div class="swatch" data-name="Soft Coklat" style="background:#a0714f;" title="Soft Coklat"></div>
+                </div>
+                <div class="swatch-name" id="label-maryam">White Snow</div>
+
+                <div class="color-label" style="margin-top:4px">Pilih Saiz</div>
+                <div class="size-grid" id="sizes-maryam">
+                  <button class="size-btn active" data-price="39">1–3 tahun<br><small>RM 39</small></button>
+                  <button class="size-btn" data-price="49">4–8 tahun<br><small>RM 49</small></button>
+                  <button class="size-btn" data-price="59">9–12 tahun<br><small>RM 59</small></button>
+                  <button class="size-btn" data-price="79">Dewasa<br><small>RM 79</small></button>
+                </div>
+
+                <div class="field">
+                  <label>Kuantiti</label>
+                  <input type="number" min="1" value="1" class="qty-input" data-for="maryam">
+                </div>
+                <div class="field">
+                  <label>Nama Pembeli <span style="color:var(--muted);font-weight:400">(Opsional)</span></label>
+                  <input type="text" class="nama-input" placeholder="Contoh: Siti Aminah">
+                </div>
+
+                <hr class="divider-dash">
+                <div class="total-row">
+                  <div class="total-label">Jumlah Bayaran</div>
+                  <div class="total-val" id="total-maryam">RM 39.00</div>
+                </div>
+                <button class="btn-buy btn-proceed" data-panel="maryam">Beli Sekarang →</button>
+              </div>
             </div>
 
-            <div class="form">
-              <h3>Maklumat Tempahan</h3>
-              <div class="field">
-                <label for="varian">Pilih Design Telekung</label>
-                <select id="varian" name="varian" autocomplete="off">
-                  <option value="129" data-img="maryam_dhuha.jpg" selected>Maryam Dhuha — RM 129.00</option>
-                  <option value="149" data-img="zaraa.jpg">Zaraa — RM 149.00</option>
-                  <option value="99" data-img="basic_sofea.jpg">Basic Sofea — RM 99.00</option>
-                </select>
+            <!-- NURMARYAM -->
+            <div class="prod-panel" id="panel-nurmaryam" data-type="sized">
+              <div class="prod-header">
+                <div class="prod-name-tag">NurMaryam — Pelbagai Saiz</div>
+                <div class="price-row">
+                  <div class="price" id="price-nurmaryam">RM 59.00</div>
+                  <div class="price-old">RM 89.00</div>
+                </div>
               </div>
-
-              <div class="field">
-                <label for="jumlah">Kuantiti</label>
-                <input id="jumlah" name="jumlah" type="number" min="1" value="1" autocomplete="off" />
+              <div class="img-zone">
+                <div class="img-box">
+                  <img src="" alt="NurMaryam" id="img-nurmaryam">
+                  <div class="img-placeholder"><strong>🧕</strong>NurMaryam<br>Masukkan pautan gambar</div>
+                </div>
               </div>
+              <div class="form-body">
+                <div class="color-label">Pilih Warna</div>
+                <div class="swatches" id="swatches-nurmaryam">
+                  <div class="swatch active" data-name="White Snow" style="background:#f9f9f9; border-color:#ccc;"></div>
+                  <div class="swatch" data-name="White Nila" style="background:#e8eaf6;"></div>
+                  <div class="swatch" data-name="Light Pink" style="background:#f9c6d0;"></div>
+                  <div class="swatch" data-name="Grey" style="background:#9e9e9e;"></div>
+                  <div class="swatch" data-name="Purple" style="background:#9c6cc0;"></div>
+                </div>
+                <div class="swatch-name" id="label-nurmaryam">White Snow</div>
 
-              <div class="field">
-                <label for="nama">Nama Pembeli (Opsional)</label>
-                <input id="nama" name="nama" type="text" placeholder="Contoh: Siti Aminah" autocomplete="name" />
+                <div class="color-label" style="margin-top:4px">Pilih Saiz</div>
+                <div class="size-grid" id="sizes-nurmaryam">
+                  <button class="size-btn active" data-price="59">1–3 tahun<br><small>RM 59</small></button>
+                  <button class="size-btn" data-price="69">4–8 tahun<br><small>RM 69</small></button>
+                  <button class="size-btn" data-price="79">9–12 tahun<br><small>RM 79</small></button>
+                  <button class="size-btn" data-price="99">Dewasa<br><small>RM 99</small></button>
+                </div>
+
+                <div class="field">
+                  <label>Kuantiti</label>
+                  <input type="number" min="1" value="1" class="qty-input" data-for="nurmaryam">
+                </div>
+                <div class="field">
+                  <label>Nama Pembeli <span style="color:var(--muted);font-weight:400">(Opsional)</span></label>
+                  <input type="text" class="nama-input" placeholder="Contoh: Siti Aminah">
+                </div>
+                <hr class="divider-dash">
+                <div class="total-row">
+                  <div class="total-label">Jumlah Bayaran</div>
+                  <div class="total-val" id="total-nurmaryam">RM 59.00</div>
+                </div>
+                <button class="btn-buy btn-proceed" data-panel="nurmaryam">Beli Sekarang →</button>
               </div>
-
-              <div class="summary">
-                <div class="muted">Total Pembayaran</div>
-                <div class="val" id="total">RM 129.00</div>
-              </div>
-
-              <button class="btn btn-primary" style="width:100%;" id="btnBayar">
-                Beli Sekarang →
-              </button>
             </div>
-          </div>
 
+            <!-- ZARAA -->
+            <div class="prod-panel" id="panel-zaraa" data-type="sized">
+              <div class="prod-header">
+                <div class="prod-name-tag">Zaraa — Pelbagai Saiz</div>
+                <div class="price-row">
+                  <div class="price" id="price-zaraa">RM 39.00</div>
+                  <div class="price-old">RM 59.00</div>
+                </div>
+              </div>
+              <div class="img-zone">
+                <div class="img-box">
+                  <img src="" alt="Zaraa" id="img-zaraa">
+                  <div class="img-placeholder"><strong>🧕</strong>Zaraa<br>Masukkan pautan gambar</div>
+                </div>
+              </div>
+              <div class="form-body">
+                <div class="color-label" style="margin-top:4px">Pilih Saiz</div>
+                <div class="size-grid" id="sizes-zaraa">
+                  <button class="size-btn active" data-price="39">1–3 tahun<br><small>RM 39</small></button>
+                  <button class="size-btn" data-price="49">4–8 tahun<br><small>RM 49</small></button>
+                  <button class="size-btn" data-price="59">9–12 tahun<br><small>RM 59</small></button>
+                  <button class="size-btn" data-price="79">Dewasa<br><small>RM 79</small></button>
+                </div>
+
+                <div class="field">
+                  <label>Kuantiti</label>
+                  <input type="number" min="1" value="1" class="qty-input" data-for="zaraa">
+                </div>
+                <div class="field">
+                  <label>Nama Pembeli <span style="color:var(--muted);font-weight:400">(Opsional)</span></label>
+                  <input type="text" class="nama-input" placeholder="Contoh: Siti Aminah">
+                </div>
+                <hr class="divider-dash">
+                <div class="total-row">
+                  <div class="total-label">Jumlah Bayaran</div>
+                  <div class="total-val" id="total-zaraa">RM 39.00</div>
+                </div>
+                <button class="btn-buy btn-proceed" data-panel="zaraa">Beli Sekarang →</button>
+              </div>
+            </div>
+
+            <!-- BASIC SOFEA -->
+            <div class="prod-panel" id="panel-sofea" data-type="sized">
+              <div class="prod-header">
+                <div class="prod-name-tag">Basic Sofea — Pelbagai Saiz</div>
+                <div class="price-row">
+                  <div class="price" id="price-sofea">RM 53.00</div>
+                  <div class="price-old">RM 79.00</div>
+                </div>
+              </div>
+              <div class="img-zone">
+                <div class="img-box">
+                  <img src="" alt="Basic Sofea" id="img-sofea">
+                  <div class="img-placeholder"><strong>🧕</strong>Basic Sofea<br>Masukkan pautan gambar</div>
+                </div>
+              </div>
+              <div class="form-body">
+                <div class="color-label">Pilih Warna</div>
+                <div class="swatches" id="swatches-sofea">
+                  <div class="swatch active" data-name="White" style="background:#f9f9f9; border-color:#ccc;"></div>
+                  <div class="swatch" data-name="Light Pink" style="background:#f9c6d0;"></div>
+                  <div class="swatch" data-name="Baby Blue" style="background:#a8d8ea;"></div>
+                  <div class="swatch" data-name="Grey" style="background:#9e9e9e;"></div>
+                  <div class="swatch" data-name="Mint Green" style="background:#a8e6cf;"></div>
+                  <div class="swatch" data-name="Khaki" style="background:#c8b28c;"></div>
+                </div>
+                <div class="swatch-name" id="label-sofea">White</div>
+
+                <div class="color-label" style="margin-top:4px">Pilih Saiz</div>
+                <div class="size-grid" id="sizes-sofea">
+                  <button class="size-btn active" data-price="53">1–3 tahun<br><small>RM 53</small></button>
+                  <button class="size-btn" data-price="63">4–8 tahun<br><small>RM 63</small></button>
+                  <button class="size-btn" data-price="73">9–12 tahun<br><small>RM 73</small></button>
+                  <button class="size-btn" data-price="93">Dewasa<br><small>RM 93</small></button>
+                </div>
+
+                <div class="field">
+                  <label>Kuantiti</label>
+                  <input type="number" min="1" value="1" class="qty-input" data-for="sofea">
+                </div>
+                <div class="field">
+                  <label>Nama Pembeli <span style="color:var(--muted);font-weight:400">(Opsional)</span></label>
+                  <input type="text" class="nama-input" placeholder="Contoh: Siti Aminah">
+                </div>
+                <hr class="divider-dash">
+                <div class="total-row">
+                  <div class="total-label">Jumlah Bayaran</div>
+                  <div class="total-val" id="total-sofea">RM 53.00</div>
+                </div>
+                <button class="btn-buy btn-proceed" data-panel="sofea">Beli Sekarang →</button>
+              </div>
+            </div>
+
+          </div><!-- /productSelectionView -->
+
+          <!-- BCL PAYMENT VIEW -->
           <div id="bclPaymentView" class="bcl-view">
             <div class="bcl-header">
-              <span style="font-weight: 800; font-size: 16px;">Selesaikan Pembayaran</span>
-              <button id="btnKembali">← Tukar Pilihan</button>
+              <div class="bcl-title">Selesaikan Pembayaran</div>
+              <button class="btn-back" id="btnKembali">← Tukar Pilihan</button>
             </div>
+            <div class="bcl-summary" id="bclRingkasan"></div>
             
-            <div class="order-summary-badge" id="bclRingkasan">
-              </div>
-
-<div id="bcl-payment-form" data-url="https://dynoz.bcl.my/embed/form/telekung-maryam-imported-1"></div>
+            <!-- Kemas kini pautan borang BCL baru di sini -->
+            <div id="bcl-payment-form" data-url="https://dynoz.bcl.my/embed/form/telekung-maryam-imported-1-imported"></div>
           </div>
 
-        </aside>
+        </aside><!-- /checkout-card -->
 
       </div>
     </section>
 
+    <!-- CARA BELI -->
     <section id="cara-beli">
-      <h2 class="section-title">Cara Mudah Membeli</h2>
-      <div class="two-col">
-        <div class="feature">
-          <h4>1) Pilih Design & Kuantiti</h4>
-          <p>Pilih variasi rekaan sama ada Maryam Dhuha, Zaraa, atau Basic Sofea serta nama anda.</p>
+      <div class="section-head">
+        <h2>Cara Mudah Membeli</h2>
+        <p>4 langkah je — ambil masa kurang dari 5 minit</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>Pilih Koleksi</h4>
+          <p>Pilih antara Maryam Dhuha, NurMaryam, Zaraa, atau Basic Sofea mengikut citarasa anda.</p>
         </div>
-        <div class="feature">
-          <h4>2) Isi Borang Selamat BCL</h4>
-          <p>Sistem beralih ke halaman input selamat BCL untuk pengesahan akaun perbankan/kad anda tanpa ralat.</p>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Pilih Warna & Saiz</h4>
+          <p>Tentukan warna kegemaran dan saiz yang sesuai — dari 1–3 tahun hingga saiz dewasa.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Semak Jumlah</h4>
+          <p>Harga dikira secara automatik. Tetapkan kuantiti dan semak jumlah bayaran sebelum teruskan.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4>Bayar Melalui BCL</h4>
+          <p>Sistem beralih ke borang BCL yang selamat. Bayaran disahkan dan pesanan diproses segera.</p>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="footer-row">
-      <div><b>Telekung Maryam</b> — Halaman Jualan Rasmi</div>
-      <div>© <span id="year"></span> • Hak Cipta Terpelihara</div>
-    </div>
-  </footer>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-head">
+        <h2>Soalan Lazim</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span>Berapa lama masa penghantaran?</span><span>+</span></div>
+          <div class="faq-a">Pesanan akan diproses dalam 1–2 hari bekerja selepas bayaran disahkan. Penghantaran dalam Malaysia biasanya mengambil masa 3–5 hari bekerja.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Boleh pesan lebih dari satu design sekaligus?</span><span>+</span></div>
+          <div class="faq-a">Buat masa ini, setiap pesanan adalah untuk satu design. Untuk pelbagai design, sila buat pesanan berasingan. Hubungi kami jika ada keperluan tempahan borong.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Adakah saiz telekung sesuai untuk semua badan?</span><span>+</span></div>
+          <div class="faq-a">Ya — Maryam Dhuha adalah saiz dewasa universal. NurMaryam, Zaraa, dan Basic Sofea tersedia dalam 4 saiz: 1–3 tahun, 4–8 tahun, 9–12 tahun, dan dewasa.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Boleh buat pertukaran atau pemulangan?</span><span>+</span></div>
+          <div class="faq-a">Ya, pertukaran boleh dibuat dalam tempoh 7 hari selepas terima barang, tertakluk kepada terma dan syarat pemulangan produk kami.</div>
+        </div>
+      </div>
+    </section>
 
-  <script src="https://bcl.my/js/bc-encrypted-payment-embed.js"></script>
+  </div>
+</main>
 
-  <script>
-    const formatRM = (val) => 'RM ' + val.toFixed(2);
-    const varian = document.getElementById('varian');
-    const jumlah = document.getElementById('jumlah');
-    const hargaTampil = document.getElementById('hargaTampil');
-    const hargaLama = document.getElementById('hargaLama');
-    const total = document.getElementById('total');
-    const nama = document.getElementById('nama');
-    
-    const btnBayar = document.getElementById('btnBayar');
-    const btnKembali = document.getElementById('btnKembali');
-    
-    const productSelectionView = document.getElementById('productSelectionView');
-    const bclPaymentView = document.getElementById('bclPaymentView');
-    const bclRingkasan = document.getElementById('bclRingkasan');
-    
-    const gambarProduk = document.getElementById('gambarProduk');
-    const placeholderText = document.getElementById('placeholderText');
+<footer>
+  <div class="footer-inner">
+    <span>&copy; <span id="year"></span> <strong>Telekung Maryam</strong>. Hak Cipta Terpelihara.</span>
+  </div>
+</footer>
 
-    const updateHarga = () => {
-      const hargaSatuan = Number(varian.value || 0);
-      const qty = Math.max(1, Number(jumlah.value || 1));
-      const jumlahKeseluruhan = hargaSatuan * qty;
+<!-- Skrip Rasmi BCL Embed -->
+<script src="https://bcl.my/js/bc-encrypted-payment-embed.js"></script>
 
-      hargaTampil.textContent = formatRM(hargaSatuan);
-      total.textContent = formatRM(jumlahKeseluruhan);
+<script>
+  // ===== YEAR =====
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-      const hargaAsalMap = { 129: 159, 149: 179, 99: 129 };
-      hargaLama.textContent = formatRM(hargaAsalMap[hargaSatuan] || (hargaSatuan + 30));
+  // ===== TABS =====
+  const tabs = document.querySelectorAll('.prod-tab');
+  const panels = document.querySelectorAll('.prod-panel');
 
-      const selectedOption = varian.options[varian.selectedIndex];
-      const srcGambar = selectedOption.getAttribute('data-img');
-      
-      if (srcGambar && srcGambar !== "" && !srcGambar.includes('.jpg')) { 
-        gambarProduk.src = srcGambar;
-        gambarProduk.style.display = "block";
-        placeholderText.style.display = "none";
-      }
-      return { hargaSatuan, qty, jumlahKeseluruhan };
-    };
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    });
+  });
 
-    varian.addEventListener('change', updateHarga);
-    jumlah.addEventListener('input', updateHarga);
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // ===== SWATCHES =====
+  document.querySelectorAll('.swatches').forEach(group => {
+    const panelId = group.id.replace('swatches-', '');
+    const label = document.getElementById('label-' + panelId);
+    group.querySelectorAll('.swatch').forEach(s => {
+      s.addEventListener('click', () => {
+        group.querySelectorAll('.swatch').forEach(x => x.classList.remove('active'));
+        s.classList.add('active');
+        if (label) label.textContent = s.dataset.name;
+      });
+    });
+  });
 
-    // APABILA "BELI SEKARANG" DITEKAN: TUKAR VIEW KE BCL FORM SECARA LIVE
-    btnBayar.addEventListener('click', () => {
-      const { qty, jumlahKeseluruhan } = updateHarga();
-      const namaPembeli = nama.value.trim() || 'Pelanggan';
-      const designTerpilih = varian.options[varian.selectedIndex].text.split('—')[0].trim();
+  // ===== SIZES & TOTALS =====
+  const panelPrices = { maryam: 39, nurmaryam: 59, zaraa: 39, sofea: 53 };
 
-      // Kemas kini maklumat ringkasan di atas kotak BCL
-      bclRingkasan.innerHTML = `
-        <strong>Pembeli:</strong> ${namaPembeli}<br>
-        <strong>Pilihan:</strong> ${designTerpilih} (${qty} pasang)<br>
-        <span style="color:var(--brand-blue); font-weight:800;">Jumlah: ${formatRM(jumlahKeseluruhan)}</span>
+  document.querySelectorAll('.size-grid').forEach(grid => {
+    const panelId = grid.id.replace('sizes-', '');
+    grid.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        grid.querySelectorAll('.size-btn').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+        panelPrices[panelId] = Number(btn.dataset.price);
+        document.getElementById('price-' + panelId).textContent = 'RM ' + Number(btn.dataset.price).toFixed(2);
+        recalc(panelId);
+      });
+    });
+  });
+
+  document.querySelectorAll('.qty-input').forEach(inp => {
+    inp.addEventListener('input', () => recalc(inp.dataset.for));
+  });
+
+  function recalc(panelId) {
+    const panel = document.getElementById('panel-' + panelId);
+    const qty = Math.max(1, Number(panel.querySelector('.qty-input').value) || 1);
+    const price = panelPrices[panelId] || 0;
+    document.getElementById('total-' + panelId).textContent = 'RM ' + (price * qty).toFixed(2);
+  }
+
+  // ===== BUY BUTTON =====
+  document.querySelectorAll('.btn-proceed').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.dataset.panel;
+      const panel = document.getElementById('panel-' + panelId);
+      const qty = Math.max(1, Number(panel.querySelector('.qty-input').value) || 1);
+      const price = panelPrices[panelId];
+      const total = price * qty;
+
+      const namaEl = panel.querySelector('.nama-input');
+      const nama = namaEl ? namaEl.value.trim() || 'Pelanggan' : 'Pelanggan';
+
+      const tabNames = { maryam: 'Maryam Dhuha', nurmaryam: 'NurMaryam', zaraa: 'Zaraa', sofea: 'Basic Sofea' };
+      const prodName = tabNames[panelId];
+
+      // Colour/size info
+      const swatchLabel = document.getElementById('label-' + panelId);
+      const warna = swatchLabel ? swatchLabel.textContent : '—';
+      const activeSize = panel.querySelector('.size-btn.active');
+      const saiz = activeSize ? activeSize.firstChild.textContent.trim() : 'Dewasa';
+
+      document.getElementById('bclRingkasan').innerHTML = `
+        <strong>Pembeli:</strong> ${nama}<br>
+        <strong>Produk:</strong> ${prodName}<br>
+        <strong>Warna:</strong> ${warna}<br>
+        <strong>Saiz:</strong> ${saiz}<br>
+        <strong>Kuantiti:</strong> ${qty} pasang<br>
+        <span class="bcl-total">Jumlah: RM ${total.toFixed(2)}</span>
       `;
 
-      // Sorok pemilihan barangan, tunjuk form pembayaran BCL tanpa refresh skrin
-      productSelectionView.style.display = 'none';
-      bclPaymentView.style.display = 'block';
+      document.getElementById('productSelectionView').style.display = 'none';
+      document.getElementById('bclPaymentView').style.display = 'block';
 
-      // Jika script BCL memerlukan fungsi re-initiation borang, ia selamat di sini
-      if(window.BclEmbedForm) {
-         window.BclEmbedForm.init(); 
-      }
+      if (window.BclEmbedForm) window.BclEmbedForm.init();
     });
+  });
 
-    // Butang kembali ke menu produk jika tersalah pilih
-    btnKembali.addEventListener('click', () => {
-      bclPaymentView.style.display = 'none';
-      productSelectionView.style.display = 'block';
+  // ===== BACK BUTTON =====
+  document.getElementById('btnKembali').addEventListener('click', () => {
+    document.getElementById('bclPaymentView').style.display = 'none';
+    document.getElementById('productSelectionView').style.display = 'block';
+  });
+
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
     });
-
-    updateHarga();
-  </script>
+  });
+</script>
 </body>
 </html>
